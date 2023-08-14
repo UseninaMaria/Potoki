@@ -12,9 +12,9 @@ public class DeserializationMain {
         GameProgress loadedProgress = openProgress("D://Games/save.dat");
         System.out.println(loadedProgress);
         GameProgress loadedProgress1 = openProgress("D://Games/save1.dat");
-        System.out.println(loadedProgress);
+        System.out.println(loadedProgress1);
         GameProgress loadedProgress2 = openProgress("D://Games/save2.dat");
-        System.out.println(loadedProgress);
+        System.out.println(loadedProgress2);
     }
 
     public static void openZip(String dir_zip, String pack) {

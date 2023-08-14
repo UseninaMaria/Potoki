@@ -1,12 +1,14 @@
 import java.io.*;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
+
 public class SerializationMain {
     public static List <String> directory = new ArrayList<>();
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         GameProgress gameProgress = new GameProgress(100, 15, 5, 11.5);
         GameProgress gameProgress1 = new GameProgress(200, 20, 10, 20.5);
@@ -39,8 +41,17 @@ public class SerializationMain {
                 zout.write(buffer);
                 zout.closeEntry();
             }
+            deleteNonArchivedFile();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
+    public static void deleteNonArchivedFile() {
+        for (String filePath : directory) {
+            File file = new File(filePath);
+                file.delete();
+        }
+    }
+
 }
+
